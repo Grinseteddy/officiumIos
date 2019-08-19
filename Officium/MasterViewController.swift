@@ -13,7 +13,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
     
-    var projects: ProjectsModel=ProjectsModel()
+    var projects = ProjectsModel()
     
 
     private func useData(data: String) {
@@ -22,7 +22,7 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        projects.fillWithMockup()
+
         // Do any additional setup after loading the view.
         
         
@@ -70,13 +70,14 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return projects.projects.count
+        return 5 /*projects.projects.count*/
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         //let object = objects[indexPath.row] as! NSDate
+        projects.load()
         let project=projects.projects[indexPath.row]
         cell.textLabel!.text = project.name
         return cell
