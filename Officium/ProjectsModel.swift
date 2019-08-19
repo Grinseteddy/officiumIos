@@ -11,6 +11,7 @@ import UIKit
 
 class ProjectsModel {
 
+    static let shared=ProjectsModel()
     var projects: [ProjectModel]=[]
 
     //TODO Singleton for application settings
@@ -18,7 +19,7 @@ class ProjectsModel {
     let urlAsString : String = "http://ec2-3-120-34-138.eu-central-1.compute.amazonaws.com:5001/projects"
     var request: NSMutableURLRequest=NSMutableURLRequest()
     
-    init() {
+    private init() {
         load()
     }
     
