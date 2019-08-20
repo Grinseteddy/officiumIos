@@ -15,8 +15,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var uuidLabel: UILabel!
     
     var project: ProjectModel=ProjectModel()
+    var tasks: Tasks=Tasks()
 
     func configureView() {
+        
         // Update the user interface for the detail item.
         if let detail = detailItem {
             if let label = detailDescriptionLabel {
@@ -29,6 +31,16 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         uuidLabel.text=project.id
+        if (tasks.tasks.count>0) {
+            uuidLabel.text=tasks.tasks[0].name
+        }
+        tasks.load(projectId: project.id)
+        while !tasks.loaded {
+            sleep(1)
+        }
+        if (tasks.tasks.count>0) {
+            uuidLabel.text=tasks.tasks[0].name
+        }
         configureView()
     }
 

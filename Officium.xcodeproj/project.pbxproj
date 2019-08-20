@@ -18,6 +18,8 @@
 		9488566C230A9B0700B61A48 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488566B230A9B0700B61A48 /* ProjectModel.swift */; };
 		94885673230AA1F900B61A48 /* ProjectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94885672230AA1F900B61A48 /* ProjectsModel.swift */; };
 		94885676230BFA5A00B61A48 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94885675230BFA5A00B61A48 /* ApplicationSettings.swift */; };
+		94885678230C0E4000B61A48 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94885677230C0E4000B61A48 /* Task.swift */; };
+		9488567A230C109C00B61A48 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94885679230C109C00B61A48 /* Tasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		9488566B230A9B0700B61A48 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		94885672230AA1F900B61A48 /* ProjectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsModel.swift; sourceTree = "<group>"; };
 		94885675230BFA5A00B61A48 /* ApplicationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
+		94885677230C0E4000B61A48 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		94885679230C109C00B61A48 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 			children = (
 				9488566B230A9B0700B61A48 /* ProjectModel.swift */,
 				94885672230AA1F900B61A48 /* ProjectsModel.swift */,
+				94885677230C0E4000B61A48 /* Task.swift */,
+				94885679230C109C00B61A48 /* Tasks.swift */,
 			);
 			name = DataModels;
 			sourceTree = "<group>";
@@ -288,7 +294,9 @@
 				94885640230A973300B61A48 /* DetailViewController.swift in Sources */,
 				9488563E230A973300B61A48 /* MasterViewController.swift in Sources */,
 				9488563C230A973300B61A48 /* AppDelegate.swift in Sources */,
+				9488567A230C109C00B61A48 /* Tasks.swift in Sources */,
 				9488566C230A9B0700B61A48 /* ProjectModel.swift in Sources */,
+				94885678230C0E4000B61A48 /* Task.swift in Sources */,
 				94885676230BFA5A00B61A48 /* ApplicationSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
