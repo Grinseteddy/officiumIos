@@ -12,7 +12,9 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-    let project: ProjectModel=ProjectModel()
+    @IBOutlet weak var uuidLabel: UILabel!
+    
+    var project: ProjectModel=ProjectModel()
 
     func configureView() {
         // Update the user interface for the detail item.
@@ -26,6 +28,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        uuidLabel.text=project.id
         configureView()
     }
 

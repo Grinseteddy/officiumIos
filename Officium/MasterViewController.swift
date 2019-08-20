@@ -53,6 +53,7 @@ class MasterViewController: UITableViewController {
                 project=projects.projects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = project.name
+                controller.project=project
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
