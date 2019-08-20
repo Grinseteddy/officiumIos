@@ -11,27 +11,31 @@ import UIKit
 
 class ProjectsModel {
 
-    static let shared=ProjectsModel()
     var projects: [ProjectModel]=[]
-
-    //TODO Singleton for application settings
+    var loaded: Bool=false;
     
-    let urlAsString : String = "http://ec2-3-120-34-138.eu-central-1.compute.amazonaws.com:5001/projects"
-    var request: NSMutableURLRequest=NSMutableURLRequest()
+    let urlAsString : String=ApplicationSettings.projectManagementAsString
     
-    private init() {
+    init() {
+        self.loaded=false
         load()
     }
     
     func load() {
+        if self.loaded {
+            return
+        }
         if let url = URL(string: urlAsString) {
             URLSession.shared.dataTask(with: url) {data,response,error in
                 if let data = data {
                     do {
+                        //TODO Handle errors accordingly
+                        
                         self.projects = try JSONDecoder().decode([ProjectModel].self, from: data)
                         for project in self.projects {
                             print(project.name)
-                        }   
+                        }
+                        self.loaded=true;
                     } catch let error {
                         print(error)
                     }

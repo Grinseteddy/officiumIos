@@ -17,6 +17,7 @@
 		9488565E230A973600B61A48 /* OfficiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488565D230A973600B61A48 /* OfficiumUITests.swift */; };
 		9488566C230A9B0700B61A48 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488566B230A9B0700B61A48 /* ProjectModel.swift */; };
 		94885673230AA1F900B61A48 /* ProjectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94885672230AA1F900B61A48 /* ProjectsModel.swift */; };
+		94885676230BFA5A00B61A48 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94885675230BFA5A00B61A48 /* ApplicationSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9488565F230A973600B61A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9488566B230A9B0700B61A48 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		94885672230AA1F900B61A48 /* ProjectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsModel.swift; sourceTree = "<group>"; };
+		94885675230BFA5A00B61A48 /* ApplicationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		9488563A230A973300B61A48 /* Officium */ = {
 			isa = PBXGroup;
 			children = (
+				94885674230BFA3500B61A48 /* ApplicationSettings */,
 				94885671230AA1CF00B61A48 /* DataModels */,
 				9488563B230A973300B61A48 /* AppDelegate.swift */,
 				9488563D230A973300B61A48 /* MasterViewController.swift */,
@@ -140,6 +143,14 @@
 				94885672230AA1F900B61A48 /* ProjectsModel.swift */,
 			);
 			name = DataModels;
+			sourceTree = "<group>";
+		};
+		94885674230BFA3500B61A48 /* ApplicationSettings */ = {
+			isa = PBXGroup;
+			children = (
+				94885675230BFA5A00B61A48 /* ApplicationSettings.swift */,
+			);
+			path = ApplicationSettings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				9488563E230A973300B61A48 /* MasterViewController.swift in Sources */,
 				9488563C230A973300B61A48 /* AppDelegate.swift in Sources */,
 				9488566C230A9B0700B61A48 /* ProjectModel.swift in Sources */,
+				94885676230BFA5A00B61A48 /* ApplicationSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RM6GM29997;
 				INFOPLIST_FILE = Officium/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RM6GM29997;
 				INFOPLIST_FILE = Officium/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

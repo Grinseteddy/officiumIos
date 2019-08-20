@@ -13,7 +13,8 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
     
-
+    var projects: ProjectsModel=ProjectsModel()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let project: ProjectModel
-                project=ProjectsModel.shared.projects[indexPath.row]
+                project=projects.projects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = project.name
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -65,7 +66,14 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ProjectsModel.shared.projects.count
+        if projects.loaded {
+            return projects.projects.count
+        }
+        projects.load()
+        while (!projects.loaded) {
+            sleep(1)
+        }
+        return projects.projects.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,7 +81,7 @@ class MasterViewController: UITableViewController {
 
         //let object = objects[indexPath.row] as! NSDate
 
-        let project=ProjectsModel.shared.projects[indexPath.row]
+        let project=projects.projects[indexPath.row]
         cell.textLabel!.text = project.name
         return cell
     }
@@ -85,7 +93,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            ProjectsModel.shared.projects.remove(at: indexPath.row)
+            projects.projects.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -94,4 +102,6 @@ class MasterViewController: UITableViewController {
 
 
 }
+
+
 
